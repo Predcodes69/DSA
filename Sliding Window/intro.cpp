@@ -1,3 +1,4 @@
+//Problem link: https://practice.geeksforgeeks.org/problems/max-sum-subarray-of-size-k5313/1
 /*
  * 
  *@author - pred695
@@ -163,14 +164,45 @@ void sieve()
 /*----------------------------------------------------------------------MAIN CODE------------------------------------------------------------------------------------------------------------------------*/
 void solve()
 {
-  
+    int n, k;
+    cin >> n >> k;
+    vi v(n);
+    read(v, n);
+    int mx = INT_MIN;
+    // Brute force
+    // rep(i, 0, n - k + 1)
+    // {
+    //     int s = 0;
+    //     rep(j, i, i + k)
+    //     {
+    //         s += v[j];
+    //     }
+    //     mx = max(mx, s);
+    // }
+    // debug(mx);
+    //Sliding window technik
+    int j = 0;
+    int s = 0;
+    rep(i, 0, k)
+    {
+        s += v[i];
+    }
+    debug(s);
+    rep(i, k - 1, n)
+    {   
+        if(j > 0)
+            s+=v[i];
+        mx = max(mx, s);
+        s-=v[j++];
+    }
+    cout << mx << endl;
 }
 /*----------------------------------------------------------------------ありがと-------------------------------------------------------------------------------------------------------------------------*/
 signed main()
 {
 fast();
 int t = 1;
-cin >> t;
+// cin >> t;
 start = clock();
 rep(i, 0, t)
 {
