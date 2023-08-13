@@ -1,0 +1,1 @@
+{"name":"Local: NGIRL","url":"d:\\DSA\\Number Theory\\Sieve\\SPOJ\\NGIRL.cpp","tests":[{"id":1691595463748,"input":"3\n10 2\n20 7\n10 4","output":"2 2\n2 1\n2 1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\DSA\\Number Theory\\Sieve\\SPOJ\\NGIRL.cpp","group":"local","local":true}

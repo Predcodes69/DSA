@@ -1,0 +1,1 @@
+{"name":"Local: PalindromicPartition","url":"d:\\DSA\\Recursion\\PalindromicPartition.cpp","tests":[{"id":1691872946093,"input":"aab","output":"a a b\naa b"},{"id":1691872951230,"input":"aabb","output":"a a b b \naa b b \na a bb\naa bb"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\DSA\\Recursion\\PalindromicPartition.cpp","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: 230B","url":"d:\\DSA\\Number Theory\\Sieve\\Codeforces\\230B.cpp","tests":[{"id":1691750532981,"input":"3\n4 5 \n999966000289","output":"YES\nNO\nNO"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\DSA\\Number Theory\\Sieve\\Codeforces\\230B.cpp","group":"local","local":true}

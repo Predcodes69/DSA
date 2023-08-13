@@ -1,0 +1,1 @@
+{"name":"Local: HS08PAUL","url":"d:\\DSA\\Number Theory\\Sieve\\SPOJ\\HS08PAUL.cpp","tests":[{"id":1691524803186,"input":"4\n1\n2\n10\n9999999","output":"0\n1\n2\n13175"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\DSA\\Number Theory\\Sieve\\SPOJ\\HS08PAUL.cpp","group":"local","local":true}

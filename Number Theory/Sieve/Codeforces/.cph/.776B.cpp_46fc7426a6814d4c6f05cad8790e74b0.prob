@@ -1,0 +1,1 @@
+{"name":"Local: 776B","url":"d:\\DSA\\Number Theory\\Sieve\\Codeforces\\776B.cpp","tests":[{"id":1691572611977,"input":"3\n","output":"2\n1 1 2 "},{"id":1691572627017,"input":"1","output":"2\n1 1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\DSA\\Number Theory\\Sieve\\Codeforces\\776B.cpp","group":"local","local":true}
