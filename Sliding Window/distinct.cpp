@@ -29,6 +29,8 @@
 ⣿⣿⣿⣿⣿⣿⣿⡇⠈⠈⡂⢅⡣⢯⣛⠷⠿⡿⡽⠟⣑⣤⠀⡁⠅⢁⢸⣿⣿⣿
 ⣿⣿⣿⣿⣿⣿⣿⣿⡧⣀⣦⡈⠊⠓⠕⠧⡣⣆⢮⠪⡐⣿⣷⣼⣦⣷⣿⣿⣿⣿
 ⣿⣿⣿⣿⣿⣿⡿⢑⢥⣳⣿⢷⣁⠂⠀⠀⢨⡳⠅⡀⢿⣆⡙⠿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀      */
+/*Problem link:
+https://practice.geeksforgeeks.org/problems/count-distinct-elements-in-every-window/1
 /*
  * 
  *@author - pred695
@@ -75,7 +77,7 @@ using namespace std;
 #define M                           1000000007
 #define prec(x)                     cout << fixed << setprecision(x)
 #define bpc(x)                      __builtin_popcountll(x)
-const int N = 1e7 + 10;
+const int N = 1e5 + 10;
 
 #ifndef ONLINE_JUDGE
 #define debug(x) cerr << #x <<": "; deb(x); cerr << endl;
@@ -159,17 +161,39 @@ void sieve()
         }
     }
 }
+int hsh[N];
 /*----------------------------------------------------------------------MAIN CODE------------------------------------------------------------------------------------------------------------------------*/
 void solve()
 {
-
+    int n, k;
+    cin >> n >> k;
+    vi v(n);
+    read(v, n);
+    int j = 0;
+    vi distinct;
+    rep(i, 0, n)
+    {
+        if(hsh[v[i]] == 0)
+            distinct.eb(v[i]);
+        hsh[v[i]]++;
+        if(i - j + 1 < k)
+            continue;
+        else{
+            cout << distinct.size() << " ";
+            hsh[v[j]]--;
+            if(hsh[v[j++]] == 0)
+            {
+                distinct.erase(distinct.begin());
+            }
+        }
+    }
 }
 /*----------------------------------------------------------------------ありがと-------------------------------------------------------------------------------------------------------------------------*/
 signed main()
 {
 fast();
 int t = 1;
-cin >> t;
+// cin >> t;
 start = clock();
 rep(i, 0, t)
 {

@@ -196,6 +196,7 @@ void solve()
         s-=v[j++];
     }
     cout << mx << endl;
+    //Alternative way to approach is maintain the window size of i - j + 1 == k and increment i until the window size is acheived
 }
 /*----------------------------------------------------------------------ありがと-------------------------------------------------------------------------------------------------------------------------*/
 signed main()
