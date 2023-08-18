@@ -164,26 +164,35 @@ void solve()
 {
     int n;
     cin >> n;
-    int x;
-    priority_queue<int> pq;
-    rep(i,0,n)
-    {
-        cin >> x;
-        pq.emplace(x);
-    }
-    x = 3;
-    while(x--)
-    {
-        cout << pq.top() << " ";
-        pq.pop();
-    }
+    vi v(n);
+    read(v, n);
+    vi odd, even;
+       for(int i = 0; i < n; i+=2)
+       {
+        if(v[i] & 1)
+            odd.eb(v[i]);
+        else
+            even.eb(v[i]);
+       }
+       vi odd1, even1;
+       for(int i = 1; i < n; i+=2)
+       {
+        if(v[i] & 1)
+            odd1.eb(v[i]);
+        else 
+            even1.eb(v[i]);
+       }
+       if((odd.size() > 0 and even.size() > 0) or (odd1.size() > 0 and even1.size() > 0))
+        no;
+      else
+        yes;
 }
 /*----------------------------------------------------------------------ありがと-------------------------------------------------------------------------------------------------------------------------*/
 signed main()
 {
 fast();
 int t = 1;
-// cin >> t;
+cin >> t;
 start = clock();
 rep(i, 0, t)
 {

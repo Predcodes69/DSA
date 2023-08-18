@@ -164,18 +164,48 @@ void solve()
 {
     int n;
     cin >> n;
-    int x;
-    priority_queue<int> pq;
-    rep(i,0,n)
+    vi v(n);
+    read(v, n);
+    int a = v[0], b = v[n - 1], l = 1, r = 1, c = 2, m = 0;
+    if(accumulate(v.begin(), v.begin() + n - 1, 0) < v[n-1])
     {
-        cin >> x;
-        pq.emplace(x);
+        cout << 0 << endl;
+        return;
     }
-    x = 3;
-    while(x--)
+    else
     {
-        cout << pq.top() << " ";
-        pq.pop();
+    while(l + r <= n)
+    {
+        if(a < b)
+        {
+            a+=v[l];
+            l++;
+            c++;
+        }
+        else if(b < a)
+        {
+            b+=v[n - 1 - r];
+            r++;
+            c++;
+        }
+        else 
+        {
+            m = max(m, c);
+            if(a + v[l] <= b + v[n - 1 - r])
+            {
+                a+=v[l];
+                l++;
+                c++;
+            }
+            else if(a + v[l] >= b + v[n - 1- r])
+            {
+                b+=v[n - 1 - r];
+                c++;
+                r++;
+            }
+        }
+    }
+    cout << m << endl; 
     }
 }
 /*----------------------------------------------------------------------ありがと-------------------------------------------------------------------------------------------------------------------------*/
@@ -183,7 +213,7 @@ signed main()
 {
 fast();
 int t = 1;
-// cin >> t;
+cin >> t;
 start = clock();
 rep(i, 0, t)
 {

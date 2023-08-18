@@ -164,26 +164,21 @@ void solve()
 {
     int n;
     cin >> n;
-    int x;
-    priority_queue<int> pq;
-    rep(i,0,n)
+    vector<string> v(n);
+    read(v, n);
+    // debug(v);
+    for(int i = 0; i < n; i++)
     {
-        cin >> x;
-        pq.emplace(x);
+        sort(all(v[i]));
     }
-    x = 3;
-    while(x--)
-    {
-        cout << pq.top() << " ";
-        pq.pop();
-    }
+    debug(v);
 }
 /*----------------------------------------------------------------------ありがと-------------------------------------------------------------------------------------------------------------------------*/
 signed main()
 {
 fast();
 int t = 1;
-// cin >> t;
+cin >> t;
 start = clock();
 rep(i, 0, t)
 {

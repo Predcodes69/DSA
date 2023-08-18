@@ -162,28 +162,56 @@ void sieve()
 /*----------------------------------------------------------------------MAIN CODE------------------------------------------------------------------------------------------------------------------------*/
 void solve()
 {
-    int n;
-    cin >> n;
-    int x;
-    priority_queue<int> pq;
-    rep(i,0,n)
-    {
-        cin >> x;
-        pq.emplace(x);
-    }
-    x = 3;
-    while(x--)
-    {
-        cout << pq.top() << " ";
-        pq.pop();
-    }
+    //   int n,m;
+    //     cin >> n >> m;
+ 
+    //     string a[n];
+    //     for(int i=0;i<n;i++)
+    //             cin >> a[i];
+ 
+    //     priority_queue< pair<int,int> > d;
+    //     for(int i=0;i<n;i++)
+    //     {
+    //         for(int j=0;j<m;j++)
+    //         {
+    //             if(a[i][j]=='*')
+    //                     d.push({i,j});
+    //         }
+    //     }
+ 
+    //     while(!d.empty())
+    //     {
+    //         auto val=d.top();
+    //         d.pop();
+ 
+    //         int row=val.first;
+    //         int col=val.second;
+ 
+    //         if(row==n-1)
+    //                 continue;
+    //         else if(a[row+1][col]!='.')
+    //                 continue;
+    //         else
+    //         {
+    //             a[row][col]='.';
+    //             d.push({row+1,col});
+    //             a[row+1][col]='*';
+    //         }
+    //     }
+ 
+    //     for(int i=0;i<n;i++)
+    //             cout << a[i] << endl;
+    //     cout << endl;
+    int r, c;
+    cin >> r >> c;
+    
 }
 /*----------------------------------------------------------------------ありがと-------------------------------------------------------------------------------------------------------------------------*/
 signed main()
 {
 fast();
 int t = 1;
-// cin >> t;
+cin >> t;
 start = clock();
 rep(i, 0, t)
 {

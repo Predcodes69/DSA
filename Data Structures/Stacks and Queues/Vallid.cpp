@@ -162,21 +162,53 @@ void sieve()
 /*----------------------------------------------------------------------MAIN CODE------------------------------------------------------------------------------------------------------------------------*/
 void solve()
 {
-    int n;
-    cin >> n;
-    int x;
-    priority_queue<int> pq;
-    rep(i,0,n)
+    string s;
+    cin >> s;
+    stack<int> st;
+    vi v;
+    for(auto x : s)
     {
-        cin >> x;
-        pq.emplace(x);
+        if(x == '(')
+            v.eb(1);
+        else if(x == ')')
+            v.eb(-1);
+        else if(x == '{')
+            v.eb(2);
+        else if(x == '}')
+            v.eb(-2);
+        else if(x == '[')
+            v.eb(3);
+        else if(x == ']')
+            v.eb(-3);
     }
-    x = 3;
-    while(x--)
+    for(auto x : v)
     {
-        cout << pq.top() << " ";
-        pq.pop();
+        if(st.empty())
+        {
+            if(x > 0)
+                st.push(x);
+            else{
+                cout << "false" << endl;
+                return;
+            }
+        }
+        else{
+            if(x > 0)
+            {
+                st.push(x);
+            }
+            else{
+                if(st.top() + x == 0)
+                    st.pop();
+                else{
+                    cout << "false" << endl;
+                    return;
+                }
+            }
+        }
     }
+    if(st.empty()) cout << "true" << endl;
+    else cout << "false" << endl;
 }
 /*----------------------------------------------------------------------ありがと-------------------------------------------------------------------------------------------------------------------------*/
 signed main()

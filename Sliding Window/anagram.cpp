@@ -159,24 +159,79 @@ void sieve()
         }
     }
 }
+vector<string> ans;
+string temp;
+vector<int> hsh(27, 0);
+vector<string> permutations;
+void permute(string &s, vector<string> &permutations, string &temp, vector<int> hsh){
+    if(temp.length() == s.length())
+    {
+        permutations.emplace_back(temp);
+        return;
+    }
+    for(int i = 0; i < s.length(); i++)
+    {
+        if(hsh[i] == 0)
+        {
+            temp.push_back(s[i]);
+            hsh[i] = 1;
+            permute(s, permutations, temp, hsh);
+            temp.pop_back();
+            hsh[i] = 0;
+        }
+    }
+}
+bool check(string a, string b)
+{
+    vector<int> s(27, 0), ct(27, 0);
+    for(auto x : a)
+        s[x - 'a']++;
+    for(auto x : b)
+        ct[x - 'a']++;
+    for(int i = 0; i < 27; i++)
+    {
+        if(s[i] != ct[i])
+            return false;
+    }
+    return true;
+}
 /*----------------------------------------------------------------------MAIN CODE------------------------------------------------------------------------------------------------------------------------*/
 void solve()
 {
-    int n;
-    cin >> n;
-    int x;
-    priority_queue<int> pq;
-    rep(i,0,n)
+    string s1, s2;
+    cin >> s1 >> s2;
+    int k = s2.length();
+    // permute(s2, permutations, temp, hsh);
+    // debug(permutations);
+    // map<string, int> m;
+    // for(auto x : permutations)
+    // {
+    //     m[x] = 1;
+    // }
+    int j = 0;
+    temp = "";
+    int ct = 0;
+    for(int i = 0; i < s1.length(); i++)
     {
-        cin >> x;
-        pq.emplace(x);
+        // temp.push_back(s1[i]);
+        // if(i - j + 1 < s2.length())
+        //     continue;
+        // else
+        // {
+        //     debug(temp);
+        //     ct+=m[temp];
+        //     temp.erase(temp.begin());
+        // }
+        temp.push_back(s1[i]);
+        if(i - j + 1 < k)
+            continue;
+        else{
+            ct+=check(temp, s2);
+            temp.erase(temp.begin());
+            
+        }
     }
-    x = 3;
-    while(x--)
-    {
-        cout << pq.top() << " ";
-        pq.pop();
-    }
+    cout << ct << endl;
 }
 /*----------------------------------------------------------------------ありがと-------------------------------------------------------------------------------------------------------------------------*/
 signed main()

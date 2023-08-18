@@ -164,26 +164,17 @@ void solve()
 {
     int n;
     cin >> n;
-    int x;
-    priority_queue<int> pq;
-    rep(i,0,n)
-    {
-        cin >> x;
-        pq.emplace(x);
-    }
-    x = 3;
-    while(x--)
-    {
-        cout << pq.top() << " ";
-        pq.pop();
-    }
+    if(n < 1400) cout << "Division 4" << endl;
+    else if(n >= 1400 and n < 1600) cout << "Division 3" << endl;
+    else if(n >= 1600 and n < 1900) cout << "Division 2" << endl;
+    else cout << "Division 1" << endl;
 }
 /*----------------------------------------------------------------------ありがと-------------------------------------------------------------------------------------------------------------------------*/
 signed main()
 {
 fast();
 int t = 1;
-// cin >> t;
+cin >> t;
 start = clock();
 rep(i, 0, t)
 {
