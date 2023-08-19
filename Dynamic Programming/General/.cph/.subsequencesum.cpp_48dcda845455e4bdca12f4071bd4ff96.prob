@@ -1,0 +1,1 @@
+{"name":"Local: subsequencesum","url":"c:\\Users\\HP\\DSA\\Dynamic Programming\\General\\subsequencesum.cpp","tests":[{"id":1692443447563,"input":"6\n1 4 2 -10 10 5","output":"14"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\HP\\DSA\\Dynamic Programming\\General\\subsequencesum.cpp","group":"local","local":true}
