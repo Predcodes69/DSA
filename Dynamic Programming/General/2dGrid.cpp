@@ -1,3 +1,4 @@
+/*Find the minimum sum path from top left to right bottom(only bottom and right directions allowed)*/
 /*
 ⡿⠿⠿⠿⠛⡉⠄⣂⢆⢂⠢⠂⡂⡂⡂⡂⡢⢂⢂⠢⢀⢂⢂⢂⢂⢂⠂⡙⢿⣿
 ⣿⣶⣤⠌⢀⢨⡸⡸⡸⡰⡨⡂⡂⡂⡂⣂⢂⢂⠢⣈⡂⣂⢂⡢⡪⡢⢐⠀⡂⢻
@@ -159,67 +160,29 @@ void sieve()
         }
     }
 }
-vector<bool> state(N, false);
-vector<int> conflict(N, 1);
 /*----------------------------------------------------------------------MAIN CODE------------------------------------------------------------------------------------------------------------------------*/
 void solve()
 {
-    /*Thinking:
-    Case +:
-        initially deactivated: just turn the state on, and all the prime factors on as well, assign the value of the numbers to the prime factors.
-        already on: just print already on
-        conflict with a number that's already on but has a common prime factor: spit out the value of the number given to the index of the prime factor
-    Case -:
-        initially activated: turn off the number and remove the number from the vectors of the number that is assigned to the prime factors.
-        already deactivated: no tension
-    */
-  int n, m;
-  cin >> n >> m;
-  while(m--)
-  {
-    char x;
-    int num;
-    cin >> x >> num;
-    int temp = num;
-    if(x == '+')
+    int n, m;
+    cin >> n >> m;
+    vvi v(n + 1, vi(m + 1, 0));
+    readx(v, n, m);
+    // printx(v, n, m);
+    vvi dp(n + 1, vi(m + 1, 0));
+    dp[1][1] = v[1][1];
+    rep(i, 2, n + 1)
+        dp[i][1] += dp[i - 1][1] + v[i][1];
+    rep(j, 2, m + 1)
+        dp[1][j] += dp[1][j - 1] + v[1][j];
+    // printx(dp, n, m);
+    rep(i, 2, n + 1)
     {
-        if(state[primes[num]] == true and primes[num] != conflict[primes[temp]])
+        rep(j, 2, m + 1)
         {
-            cout << "Conflict with " << conflict[primes[num]] << endl;
-        }
-        else if(state[num] == true)
-        {
-            cout << "Already on" << endl;
-        }
-        else
-        {
-            cout << "Success" << endl;
-            while (temp > 1)
-            {
-                    state[temp] = state[primes[temp]] = true;
-                    conflict[primes[temp]] = num;
-                    temp /= primes[temp];
-            }
+            dp[i][j] = min(dp[i - 1][j], dp[i][j - 1]) + v[i][j];
         }
     }
-    else
-    {
-        if(state[num] == false)
-        {
-            cout << "Already off" << endl;
-        }
-        else
-        {
-            cout << "Success" << endl;
-            while (temp > 1)
-            {
-                    state[temp] = state[primes[temp]] = false;
-                    conflict[primes[temp]] = 1;
-                    temp /= primes[temp];
-            }
-        }
-    }
-  }
+    cout << dp[n][m] << endl;
 }
 /*----------------------------------------------------------------------ありがと-------------------------------------------------------------------------------------------------------------------------*/
 signed main()
@@ -227,7 +190,6 @@ signed main()
 fast();
 int t = 1;
 // cin >> t;
-sieve();
 start = clock();
 rep(i, 0, t)
 {

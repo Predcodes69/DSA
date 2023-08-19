@@ -159,67 +159,50 @@ void sieve()
         }
     }
 }
-vector<bool> state(N, false);
-vector<int> conflict(N, 1);
 /*----------------------------------------------------------------------MAIN CODE------------------------------------------------------------------------------------------------------------------------*/
 void solve()
 {
-    /*Thinking:
-    Case +:
-        initially deactivated: just turn the state on, and all the prime factors on as well, assign the value of the numbers to the prime factors.
-        already on: just print already on
-        conflict with a number that's already on but has a common prime factor: spit out the value of the number given to the index of the prime factor
-    Case -:
-        initially activated: turn off the number and remove the number from the vectors of the number that is assigned to the prime factors.
-        already deactivated: no tension
-    */
-  int n, m;
-  cin >> n >> m;
-  while(m--)
-  {
-    char x;
-    int num;
-    cin >> x >> num;
-    int temp = num;
-    if(x == '+')
+    /*Always maintain the order of the stack as ascending order*/
+    /*[]*/
+    int n;
+    cin >> n;
+    vi v(n);
+    read(v, n);
+    rep(i, 0, n)
     {
-        if(state[primes[num]] == true and primes[num] != conflict[primes[temp]])
+        v.eb(v[i]);
+    }
+    debug(v);
+    stack<int> st;
+    vi ans;
+    int mx = INT_MIN;
+    for(int i = 2*n - 1; i >= 0; i--)
+    {
+        if (st.empty())
         {
-            cout << "Conflict with " << conflict[primes[num]] << endl;
-        }
-        else if(state[num] == true)
-        {
-            cout << "Already on" << endl;
+            ans.eb(-1);
+            st.push(v[i]);
         }
         else
         {
-            cout << "Success" << endl;
-            while (temp > 1)
+            if (v[i] >= st.top())
             {
-                    state[temp] = state[primes[temp]] = true;
-                    conflict[primes[temp]] = num;
-                    temp /= primes[temp];
+                while (v[i] >= st.top())
+                {
+                    st.pop();
+                }
+                st.push(v[i]);
+                ans.eb(-1);
+            }
+            else
+            {
+                st.push(v[i]);
+                ans.eb(st.top());
             }
         }
     }
-    else
-    {
-        if(state[num] == false)
-        {
-            cout << "Already off" << endl;
-        }
-        else
-        {
-            cout << "Success" << endl;
-            while (temp > 1)
-            {
-                    state[temp] = state[primes[temp]] = false;
-                    conflict[primes[temp]] = 1;
-                    temp /= primes[temp];
-            }
-        }
-    }
-  }
+    debug(ans);
+    
 }
 /*----------------------------------------------------------------------ありがと-------------------------------------------------------------------------------------------------------------------------*/
 signed main()
@@ -227,7 +210,6 @@ signed main()
 fast();
 int t = 1;
 // cin >> t;
-sieve();
 start = clock();
 rep(i, 0, t)
 {

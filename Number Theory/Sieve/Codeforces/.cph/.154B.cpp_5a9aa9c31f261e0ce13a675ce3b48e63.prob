@@ -1,0 +1,1 @@
+{"name":"Local: 154B","url":"c:\\Users\\HP\\DSA\\Number Theory\\Sieve\\Codeforces\\154B.cpp","tests":[{"id":1692356857377,"input":"10 10\n+ 6\n+ 10\n+ 5\n- 10\n- 5\n- 6\n+ 10\n+ 3\n+ 6\n+ 3\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\HP\\DSA\\Number Theory\\Sieve\\Codeforces\\154B.cpp","group":"local","local":true}

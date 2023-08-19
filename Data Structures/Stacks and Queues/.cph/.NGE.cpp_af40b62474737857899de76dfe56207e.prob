@@ -1,0 +1,1 @@
+{"name":"Local: NGE","url":"c:\\Users\\HP\\DSA\\Data Structures\\Stacks and Queues\\NGE.cpp","tests":[{"id":1692351756114,"input":"5\n1 2 3 4 3","output":"2 3 4 -1 4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\HP\\DSA\\Data Structures\\Stacks and Queues\\NGE.cpp","group":"local","local":true}
