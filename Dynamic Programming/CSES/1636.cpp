@@ -162,12 +162,29 @@ void sieve()
 /*----------------------------------------------------------------------MAIN CODE------------------------------------------------------------------------------------------------------------------------*/
 void solve()
 {
-    int n;
-    int x;
+    int n, x;
     cin >> n >> x;
     vi v(n);
     read(v, n);
-    //
+    //we want ordered unique combos as asked, so making sure we pick the coins in order, we need to introduce a second state to the dp,
+    //which can store the index of the book we are picking or not picking. As far as order is concerned, it will be handled by the index picking or not picking as well
+    //we can sort the array as well if we want, but it wont make a difference in the answer.
+    vvi dp(n + 2, vi(x + 2, 0));//where the first dimension denotes the books bought, and the second one denotes the amount that is left to be handled
+    //our basic state will be dp[i][j] --> denoting the ways we can while choosing among the first i coins, having j as the sum left to be handled
+    //base case
+    dp[0][0] = 1;//coins picked = 0, sum left = 0, empty set as the only way;
+    rep(i, 1, n + 1)
+    {
+        rep(j, 0, x + 1)
+        {
+            (dp[i][j] += dp[i - 1][j])%=M;
+            if(j >= v[i - 1])
+            (dp[i][j]+=dp[i][j - v[i - 1]])%=M;
+            /*the first term "dp[i][j] denotes the ways to make sum j if we didn't pick i'th coin while staying at the i'th coin and already traversed the pervious (i - 1) coins, and the sum left to be handled being j,
+            while the second term denotes the ways to make sum j if we pick i'th coin(also applying infinite transfer)(the sum left being j-(value of i'th coin)"*/
+        }
+    }
+    cout << dp[n][x] << endl;
 }
 /*----------------------------------------------------------------------ありがと-------------------------------------------------------------------------------------------------------------------------*/
 signed main()

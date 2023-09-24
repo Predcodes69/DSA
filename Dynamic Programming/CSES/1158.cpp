@@ -1,35 +1,4 @@
 /*
-⡿⠿⠿⠿⠛⡉⠄⣂⢆⢂⠢⠂⡂⡂⡂⡂⡢⢂⢂⠢⢀⢂⢂⢂⢂⢂⠂⡙⢿⣿
-⣿⣶⣤⠌⢀⢨⡸⡸⡸⡰⡨⡂⡂⡂⡂⣂⢂⢂⠢⣈⡂⣂⢂⡢⡪⡢⢐⠀⡂⢻
-⣿⠟⢁⢐⢈⠂⢅⢙⢜⢅⢇⢗⢕⢕⡕⡜⡆⡧⡣⡣⠃⡎⡮⡪⡺⡸⡐⡐⡐⠄
-⠔⠨⢐⠐⠄⠅⠅⡂⠔⡘⡘⡘⠪⡣⡂⡧⡣⢇⠏⡎⠨⢊⢐⠐⠄⢅⢃⢂⠂⢅
-⡖⢀⠂⠅⠅⢅⠑⠄⠅⢂⠢⡈⡂⡂⢌⢐⢐⠀⡊⢰⡀⢂⠢⠡⢑⢐⠐⢄⢑⢐
-⠠⡁⡊⠌⠌⠄⢅⠑⠈⠔⡐⡐⠠⠐⡐⡐⠀⡐⣠⣿⢮⠀⠈⠨⠐⢄⢑⢐⢐⢐
-⠂⡐⠄⠅⠅⢈⠐⠠⢈⢂⠂⠄⠠⠑⣀⠔⣡⠮⠟⢊⣡⢶⡈⠠⢑⢐⢐⠐⡐⠐
-⡇⡐⠡⠡⠁⠀⠐⠀⠀⠀⠀⠡⣶⢾⣳⡖⡀⠀⠀⢀⣀⢠⡀⢀⠅⡂⡂⠅⠈⠄
-⣇⠂⠅⢁⠀⢠⢫⡇⠀⡀⠛⠩⣿⣟⣿⣻⣇⢐⠄⢌⢋⢸⠅⠂⡐⡐⡐⢨⡇⢀
-⣿⠈⢀⡄⡐⠀⢿⢷⡡⢐⢅⢪⣷⢿⣽⣯⡿⣦⣥⡥⣥⢫⡐⡁⡂⠢⡈⠜⠁⣸
-⡟⣠⣾⡧⢐⠁⠌⣿⣺⢽⡯⣿⣽⣟⢷⡻⡝⣷⢷⣻⢾⡽⠂⡂⠊⢀⠄⠠⠀⢾
-⣿⣿⡿⣿⡄⠌⣄⠘⠯⡿⣽⢿⣾⣺⣟⣿⣧⣻⣿⡻⠝⣁⢌⠀⠴⠛⣾⣦⡀⠿
-⡟⣵⣶⣶⡴⢪⣿⢆⡶⣦⣂⢍⣉⠙⠩⢚⢩⠡⠂⠠⢠⣞⣽⣷⢈⠠⠡⢀⠂⣰
-⣧⢻⣿⣿⡟⡸⠀⣞⡟⣿⠞⡈⢅⢐⠀⠄⠃⠄⠂⡅⢄⠛⣳⠵⠃⢥⠈⠄⡚⠿
-⣿⣷⣬⣥⣶⠡⡡⢀⠙⠈⡀⡪⡐⡰⠐⠠⢉⢐⠐⡎⡫⡀⠄⢀⠁⢌⣕⡐⡀⣁
-⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠛⠛⠛⠿⠟⠟⠻⠛⡋⠋⠉⢻⣿⣿⣿⣿⣿⣿⣿
-⡟⡐⢄⢢⢁⠍⠛⠟⡉⠠⠈⠄⡁⠈⠠⠐⠐⠐⠠⠐⠈⠐⡀⠸⣿⣿⣿⣿⣿⣿
-⡂⢕⢽⢷⡧⣷⣱⠀⢂⠨⢀⠁⠀⠀⠠⠐⠀⠅⠀⠄⠀⠂⢐⠀⢺⣿⣿⣿⣿⣿
-⡇⢜⢜⣿⣾⡛⠄⠂⠄⠐⡀⠀⢄⣢⣶⡶⣿⡾⣾⣾⣶⣦⡐⢈⠀⢿⣿⣿⣿⣿
-⣿⡐⢕⣺⡕⠠⠐⠈⠀⠀⠄⢘⣾⣿⡽⣿⡿⣿⢿⣻⡽⡿⣷⠄⠂⠀⡉⠻⣿⣿
-⣿⡎⠰⢹⠊⠠⠨⠐⠀⠠⠐⣸⢺⣱⣽⣾⣿⣿⣿⣿⣾⣮⡻⣷⠀⠠⠐⠈⣿⣿
-⣿⣿⡈⠢⠈⠠⢁⠂⠠⡁⣜⣾⣿⡿⡿⣯⣷⣿⣾⡿⣾⢿⡿⣿⡐⡐⠨⠀⣿⣿
-⣿⣿⡟⠠⠀⡀⠢⡡⢑⠰⣸⣿⠳⢛⠛⠮⣟⣯⣷⣿⠝⠝⠝⣿⠂⡂⢅⠅⢺⣿
-⣿⣿⡕⢈⠆⠀⢌⠂⡅⠕⡐⡡⣵⣾⢿⣷⣿⣿⢿⣯⣷⣿⣷⣬⠂⠡⠁⡈⣀⢽
-⣿⣿⡟⢄⠕⠀⠐⡑⡄⠡⢸⣺⣽⣿⢿⣻⣗⣟⡿⡺⣿⣽⣾⣟⠄⠀⡅⣼⣿⣿
-⣿⠟⢅⢅⣲⣥⠀⠫⡎⡀⢐⣿⣟⣿⣿⢿⡢⣇⢧⡑⣾⣟⣿⠣⢐⠈⢷⣿⣿⣿
-⣗⡡⣱⣼⣿⣿⣶⡀⠰⠠⡑⢜⢿⣿⣽⣿⣷⡱⡣⣫⣾⡿⠩⠨⠠⠑⢀⣹⣿⣿
-⣿⣿⣿⣿⣿⣿⣿⡇⠈⠈⡂⢅⡣⢯⣛⠷⠿⡿⡽⠟⣑⣤⠀⡁⠅⢁⢸⣿⣿⣿
-⣿⣿⣿⣿⣿⣿⣿⣿⡧⣀⣦⡈⠊⠓⠕⠧⡣⣆⢮⠪⡐⣿⣷⣼⣦⣷⣿⣿⣿⣿
-⣿⣿⣿⣿⣿⣿⡿⢑⢥⣳⣿⢷⣁⠂⠀⠀⢨⡳⠅⡀⢿⣆⡙⠿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀      */
-/*
  * 
  *@author - pred695
  * 
@@ -62,7 +31,7 @@ using namespace std;
 #define ss                          second
 #define yes                         cout << "YES" << endl
 #define no                          cout << "NO" << endl
-#define int                         long long
+// #define int                         long long
 #define lld                         long long double
 #define ull                         unsigned long long
 #define si                          set<int>
@@ -164,27 +133,32 @@ void solve()
 {
     int n, x;
     cin >> n >> x;
-    vi price(n), pages(n);
-    read(price, n);
+    vi prices(n), pages(n);
+    read(prices, n);
     read(pages, n);
-    //the main motive is to maximise the final amount of pages we have while maintaining the amount as sufficient
-    // a state can be dp[i] where dp[i] = max amount of pages we can buy for amount i < x, the final subproblem being dp[x], where x is the amount we possess initially.
-    vp v(n);
-    rep(i, 0, n)
-    {
-        v[i].ff = price[i];
-        v[i].ss = pages[i];
+    vvi dp(n + 1, vi(x + 1, 0));
+    debug(prices);
+    debug(pages);
+    //our state can be like this:
+    //base case is (0 based indexing is dp[-1][j] = 0 where j can be from 0 to x(inclusive))
+    /*dp[i][j] = maximum number of pages read while choosing among the first i books such that we are allowed to spend j coins thereafter(after making our choices among the first i - 1 books)
+    therefore transition according to the defined state can be
+    dp[i][j] = dp[i][j] (if we didn't pick the i-th book)
+    dp[i][j] = dp[i][j - prices[i]]] + pages[i] (if we decide to pick the i-th book), now the left amount that we can spend at max is nothing but j - prices[i]*/
+    for(int i = 0; i <= x; i++){
+        dp[0][i] = 0;   //since without any books we can read 0 pages.(1-based indexing)(since in 0 based indexing dp[i - 1][j] would be the required base case, but negative indices are not allowed)
     }
-    debug(v);
-    sort(all(v));
-    debug(v);
-    vi dp(x + 1, 0);
-    dp[v[0].ff] = v[0].ss;
-    for(int i = v[0].ff; i <= x; i++)
-    {
-        rep(    )
+    /*keep in mind, our dp[i][j] is 1 - based, not 0 based, the first dimension is denoting the humber of books, therefore adjusting the indexing by decreasing the first dimension in every state
+    i.e. replacing i with i - 1 while establishing the relation between states.*/
+    for(int i = 1; i <= n; i++){
+        for(int j = 0; j <= x; j++){
+            dp[i][j] = dp[i - 1][j];
+            if(j >= prices[i - 1]){
+                dp[i][j] = max(dp[i][j], dp[i - 1][j - prices[i - 1]] + pages[i - 1]);
+            }
+        }
     }
-    cout << dp[x] << endl;
+    cout << dp[n][x] << endl;       //final subproblem.
 }
 /*----------------------------------------------------------------------ありがと-------------------------------------------------------------------------------------------------------------------------*/
 signed main()

@@ -159,14 +159,31 @@ void sieve()
         }
     }
 }
+vvi dp(1e3, vi(1e9, 0));
 /*----------------------------------------------------------------------MAIN CODE------------------------------------------------------------------------------------------------------------------------*/
 void solve()
 {
-    int n, k;
-    cin >> n >> k;
-    vi v(n);
-    read(v, n);
-    
+    int n, w;
+    cin >> n >> w;
+    vi weight(n), value(n);
+    int temp = n;
+    rep(i, 0, n){
+        cin >> weight[i] >> value[i];
+    }
+    //the second dimension of the vector denotes the amount of weight permissible in the task
+    for(int i = 0; i <= w; i++){
+        dp[0][i] = 0;
+    }
+    for(int i = 1; i <= n; i++){
+        for(int j = 0; j <= w; j++){
+            dp[i][j] = dp[i - 1][j];
+            if(j - weight[i - 1] >= 0){
+                dp[i][j] = max(dp[i][j], dp[i - 1][j - weight[i - 1]] + value[i - 1]);
+            }
+        }
+    }
+    cout << dp[n][w] << endl;
+    //explanation is same as the task 1158 of CSES.
 }
 /*----------------------------------------------------------------------ありがと-------------------------------------------------------------------------------------------------------------------------*/
 signed main()
